@@ -1,0 +1,20 @@
+﻿@*This page is for displaying all the To-do. Including the completed and incomplete ones. Partial _toDoElement is used to display the To-do*@
+
+@page
+@model ToDoApplication.Pages.DisplayToDosModel
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">All To-Do</h1>
+</div>
+
+@if (Model.toDo.Count != 0)
+{
+    @foreach (ToDoApplication.Models.ToDos todo in Model.toDo)
+    {
+        <partial name="_toDoElement" model="todo" />
+    }
+}
